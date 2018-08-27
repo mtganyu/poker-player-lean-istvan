@@ -38,12 +38,13 @@ public class JsonMapper {
     public int getPlayerStack(JsonElement request) {
         JsonArray players = request.getAsJsonObject().getAsJsonArray("players");
         JsonObject player = null;
+        int result = 0;
         for (int i = 0; i < players.size(); i++) {
             JsonElement element = players.get(i);
             JsonObject pl = element.getAsJsonObject();
             if (pl.get("name").getAsString().equals("Lean Istvan")) {
                 player = pl;
-                break;
+                result = pl.get("stack").getAsInt();
             }
         }
         System.out.println("pisti=" + player);
@@ -62,7 +63,7 @@ public class JsonMapper {
                 System.out.println("RESULT MEGVAN");
             }
         }*/
-        return 0;
+        return result;
     }
 
     // work in progress
