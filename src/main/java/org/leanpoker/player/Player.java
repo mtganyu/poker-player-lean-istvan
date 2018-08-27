@@ -12,7 +12,7 @@ import java.util.Map;
 public class Player {
 
 
-    static final String VERSION = "Istvan Az asztalnal 0.4.3";
+    static final String VERSION = "Istvan Az asztalnal 0.4.4";
 
     public static JsonMapper jsonMapper = new JsonMapper();
 
@@ -36,9 +36,9 @@ public class Player {
                 System.out.println("istvan_object: " + request.getAsJsonObject().get("players").getAsJsonArray());
 
                 int stack = jsonMapper.getPlayerStack(request);
+                System.out.println("EZ ITT A STACK: " + stack);
                 List<Card>cardList = jsonMapper.getHoleCards(request);
                 System.out.println(cardList);
-                System.out.println("EZ ITT A STACK: " + stack);
 
                     /*List<OtherPlayer> players = jsonMapper.getPlayersFromJson(request);
                     System.out.println("Player's List size: "+ players.size());
