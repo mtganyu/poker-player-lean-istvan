@@ -8,7 +8,7 @@ import java.util.Map;
 
 public class Player {
 
-    static final String VERSION = "Istvan Az asztalnal 0.2";
+    static final String VERSION = "Istvan Az asztalnal 0.2.1";
 
     public static int betRequest(JsonElement request) {
             if(request.isJsonArray()){
