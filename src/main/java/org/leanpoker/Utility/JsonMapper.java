@@ -37,7 +37,8 @@ public class JsonMapper {
 
     public int getPlayerStack(JsonElement request) {
         JsonObject requestObj = request.getAsJsonObject();
-        JsonArray players = requestObj.getAsJsonArray("players");
+        JsonArray players = requestObj.get("players").getAsJsonArray();
+        System.out.println("PLAYER ELKESZULT");
         int result = 0;
         for(JsonElement playerJson : players) {
             System.out.println("FOR ALATT");
