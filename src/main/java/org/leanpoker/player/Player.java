@@ -13,7 +13,7 @@ public class Player {
 
 
 
-    static final String VERSION = "Istvan Az asztalnal 0.4.4";
+    static final String VERSION = "Istvan Az asztalnal 0.4.6";
 
 
     public static JsonMapper jsonMapper = new JsonMapper();
@@ -21,6 +21,8 @@ public class Player {
 
     public static int betRequest(JsonElement request) {
         int stack = 0;
+        Card firstCard = new Card();
+        Card secondCard = new Card();
         if (request.isJsonArray()) {
             try {
                 System.out.println("ARRAY_START");
@@ -41,8 +43,15 @@ public class Player {
                 stack = jsonMapper.getPlayerStack(request);
                 System.out.println("EZ ITT A STACK: " + stack);
                 List<Card>cardList = jsonMapper.getHoleCards(request);
-                System.out.println(cardList.size());
-
+                System.out.println(cardList.get(0).getRank()+", "+cardList.get(1).getRank());
+                firstCard.setRank(cardList.get(0).getRank());
+                firstCard.setSuit(cardList.get(0).getSuit());
+                secondCard.setRank(cardList.get(1).getRank());
+                secondCard.setSuit(cardList.get(1).getSuit());
+                System.out.println(firstCard.getRank()+", "+secondCard.getRank());
+               /* if(firstCard.getRank().equals("10")||firstCard.getRank().equals("K")||firstCard.getRank().equals("A")||firstCard.getRank().equals("Q")||firstCard.getRank().equals("J")&& secondCard.getRank().equals("A")||secondCard.getRank().equals("K")||secondCard.getRank().equals("Q")||secondCard.getRank().equals("J")||secondCard.getRank().equals("10")){
+                    return stack;
+                }*/
                     /*List<OtherPlayer> players = jsonMapper.getPlayersFromJson(request);
                     System.out.println("Player's List size: "+ players.size());
                     List<Card> hand_cards = jsonMapper.jsonAsCardObject(request);
