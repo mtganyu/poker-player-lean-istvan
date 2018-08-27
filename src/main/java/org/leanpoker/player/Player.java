@@ -15,7 +15,7 @@ import java.util.Map;
 public class Player {
 
 
-    static final String VERSION = "Istvan Az asztalnal 0.3.0";
+    static final String VERSION = "Istvan Az asztalnal 0.3.1";
 
     public static JsonMapper jsonMapper;
 
@@ -38,12 +38,8 @@ public class Player {
                     System.out.println("OBJECTEND");
                     System.out.println("istvan_object: " + request.getAsJsonObject().get("players").getAsJsonArray());
                     JsonArray playersElement = request.getAsJsonObject().get("players").getAsJsonArray();
-                    for(JsonElement playerElement : playersElement) {
-                        JsonArray player = playersElement;
-                        for(JsonElement elements : player) {
-                            System.out.println("ELEMENTS: " + elements);
-                        }
-                    }
+                    int stack = jsonMapper.getPlayerStack(request);
+                    System.out.println("EZ ITT A STACK: " +stack);
                     /*List<OtherPlayer> players = jsonMapper.getPlayersFromJson(request);
                     System.out.println("Player's List size: "+ players.size());
                     List<Card> hand_cards = jsonMapper.jsonAsCardObject(request);
@@ -62,7 +58,7 @@ public class Player {
 
             }
 
-       return  951;
+       return  952;
     }
 
     public static void showdown(JsonElement game) {
