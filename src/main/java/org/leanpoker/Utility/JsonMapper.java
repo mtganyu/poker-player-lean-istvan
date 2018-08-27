@@ -53,15 +53,22 @@ public class JsonMapper {
     }
 
     // work in progress
-    /*public GameState getGameState(JsonElement request) {
-        List<OtherPlayer> otherPlayers =getPlayersFromJson(request);
+    public GameState getGameState(JsonElement request) {
+        List<OtherPlayer> otherPlayers = getPlayersFromJson(request);
         List<Card> holeCards = getHoleCards(request);
         List<Card> communityCards = getCommunityCards(request);
-        JsonObject stats request.getAsJsonObject();
+        JsonObject stats = request.getAsJsonObject();
 
-        GameState gameState = new GameState();
+        return new GameState(stats.get("tournament_id").getAsString(),
+                stats.get("game_id").getAsString(),
+                stats.get("round").getAsInt(), stats.get("bet_index").getAsInt(),
+                stats.get("small_blind").getAsInt(), stats.get("current_buy_in").getAsInt(),
+                stats.get("pot").getAsInt(), stats.get("minimum_raise").getAsInt(),
+                stats.get("dealer").getAsInt(), stats.get("orbits").getAsInt(),
+                stats.get("in_action").getAsInt(),
+                otherPlayers, communityCards);
     }
-*/
+
     private List<Card> getCommunityCards(JsonElement request) {
         JsonArray cardsJson = request.getAsJsonObject().get("community_cards").getAsJsonArray();
         List<Card> cards = new ArrayList();
