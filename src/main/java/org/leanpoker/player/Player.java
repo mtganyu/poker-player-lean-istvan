@@ -44,10 +44,10 @@ public class Player {
                             System.out.println("ELEMENTS: " + elements);
                         }
                     }
-                    List<OtherPlayer> players = jsonMapper.getPlayersFromJson(request);
+                    /*List<OtherPlayer> players = jsonMapper.getPlayersFromJson(request);
                     System.out.println("Player's List size: "+ players.size());
                     List<Card> hand_cards = jsonMapper.jsonAsCardObject(request);
-                    System.out.println("hand size: " + hand_cards.size());
+                    System.out.println("hand size: " + hand_cards.size());*/
                 } catch (Exception e) {
                     System.out.println("OBJECT PRINT FAILED " +"This is the Exception: "+e.getMessage());
                 }
