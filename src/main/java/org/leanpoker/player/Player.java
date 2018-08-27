@@ -14,12 +14,15 @@ public class Player {
             if(request.isJsonArray()){
 
                 System.out.println(request.getAsJsonArray());
+                System.out.println("ARRAY");
             }else if(request.isJsonObject()){
 
                 System.out.println(request.getAsJsonObject());
+                System.out.println("OBJECT");
             }else if(request.isJsonPrimitive()){
 
                 System.out.println(request.getAsJsonPrimitive());
+                System.out.println("PRIMITVIE");
 
             }else{
                 request.getAsJsonNull();
