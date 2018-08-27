@@ -37,13 +37,11 @@ public class JsonMapper {
 
     public int getPlayerStack(JsonElement request) {
         JsonArray players = request.getAsJsonObject().getAsJsonArray("players");
-        System.out.println("PLAYERS SIZE: " + players.size());
         JsonObject player = null;
         for (int i = 0; i < players.size(); i++) {
             JsonElement element = players.get(i);
             JsonObject pl = element.getAsJsonObject();
-            System.out.println(pl);
-            if (player.get("name").getAsString().equals("Lean Istvan")) {
+            if (pl.get("name").getAsString().equals("Lean Istvan")) {
                 player = pl;
                 break;
             }
