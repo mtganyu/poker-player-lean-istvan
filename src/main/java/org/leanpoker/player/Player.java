@@ -9,22 +9,28 @@ import java.util.Map;
 public class Player {
 
 
-    static final String VERSION = "Istvan Az asztalnal 0.2.4";
+    static final String VERSION = "Istvan Az asztalnal 0.2.5";
 
 
     public static int betRequest(JsonElement request) {
             if(request.isJsonArray()){
+                try {
+                    System.out.println("ARRAY_START");
+                    System.out.println(request.getAsJsonArray());
+                    System.out.println("ARRAY_END");
+                } catch (Exception e) {
+                    System.out.println("ARRAY PRINT FAILED");
+                }
 
-                System.out.println(request.getAsJsonArray());
-                System.out.println("ARRAY");
 
             }else if(request.isJsonObject()){
                 try {
+                    System.out.println("OBJECT_START");
                     System.out.println(request.getAsJsonObject());
-                    System.out.println("OBJECT");
-                    System.out.println("istvan_object: " + request.getAsJsonObject().get("Lean Istvan"));
+                    System.out.println("OBJECTEND");
+                    System.out.println("istvan_object: " + request.getAsJsonObject().get("players"));
                 } catch (Exception e) {
-                    System.out.println("istvan_cash_nulla");
+                    System.out.println("OBJECT PRINT FAILED");
                 }
 
             }else if(request.isJsonPrimitive()){
@@ -37,7 +43,7 @@ public class Player {
 
             }
 
-       return  935;
+       return  941;
     }
 
     public static void showdown(JsonElement game) {
