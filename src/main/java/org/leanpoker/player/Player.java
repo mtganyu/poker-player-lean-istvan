@@ -15,7 +15,7 @@ import java.util.Map;
 public class Player {
 
 
-    static final String VERSION = "Istvan Az asztalnal 0.2.9";
+    static final String VERSION = "Istvan Az asztalnal 0.3.0";
 
     public static JsonMapper jsonMapper;
 
