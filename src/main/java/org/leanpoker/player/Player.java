@@ -1,9 +1,6 @@
 package org.leanpoker.player;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
+import com.google.gson.*;
 import org.leanpoker.Model.Card;
 import org.leanpoker.Model.OtherPlayer;
 import org.leanpoker.Utility.JsonMapper;
@@ -15,7 +12,7 @@ import java.util.Map;
 public class Player {
 
 
-    static final String VERSION = "Istvan Az asztalnal 0.3.6";
+    static final String VERSION = "Istvan Az asztalnal 0.3.7";
 
     public static JsonMapper jsonMapper;
 
@@ -38,10 +35,14 @@ public class Player {
                 System.out.println("OBJECTEND");
                 System.out.println("istvan_object: " + request.getAsJsonObject().get("players").getAsJsonArray());
 
-                JsonArray playersElement = request.getAsJsonObject().get("players").getAsJsonArray();
+                //JsonArray playersElement = request.getAsJsonObject().get("players").getAsJsonArray();
 
-                int stack = jsonMapper.getPlayerStack(request);
-                System.out.println("EZ ITT A STACK: " + stack);
+                JsonObject playerObj = request.getAsJsonObject().get("players").getAsJsonObject();
+
+                System.out.println("PLAYER_NAMES: " + playerObj.get("name"));
+
+                /*int stack = jsonMapper.getPlayerStack(request);
+                System.out.println("EZ ITT A STACK: " + stack);*/
 
                     /*List<OtherPlayer> players = jsonMapper.getPlayersFromJson(request);
                     System.out.println("Player's List size: "+ players.size());
@@ -62,7 +63,7 @@ public class Player {
 
         }
 
-        return 956;
+        return 958;
     }
 
     public static void showdown(JsonElement game) {
