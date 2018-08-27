@@ -48,6 +48,7 @@ public class JsonMapper {
             }
         }
         System.out.println("pisti=" + player);
+        System.out.println("PENZ: " + result);
         /*JsonObject players = request.getAsJsonObject().get("players").getAsJsonObject();
         JsonArray jsonArray = players.getAsJsonArray();
         System.out.println(jsonArray.size()+"EZ ITT A JSON ARRAY HOSSZA");
