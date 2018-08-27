@@ -12,7 +12,7 @@ import java.util.Map;
 public class Player {
 
 
-    static final String VERSION = "Istvan Az asztalnal 0.3.8";
+    static final String VERSION = "Istvan Az asztalnal 0.3.9";
 
     public static JsonMapper jsonMapper;
 
@@ -41,8 +41,8 @@ public class Player {
 
                 System.out.println("PLAYER_NAMES: " + playerObj.get("name"));
 
-                /*int stack = jsonMapper.getPlayerStack(request);
-                System.out.println("EZ ITT A STACK: " + stack);*/
+                int stack = jsonMapper.getPlayerStack(request);
+                System.out.println("EZ ITT A STACK: " + stack);
 
                     /*List<OtherPlayer> players = jsonMapper.getPlayersFromJson(request);
                     System.out.println("Player's List size: "+ players.size());
@@ -63,7 +63,7 @@ public class Player {
 
         }
 
-        return 959;
+        return 960;
     }
 
     public static void showdown(JsonElement game) {
