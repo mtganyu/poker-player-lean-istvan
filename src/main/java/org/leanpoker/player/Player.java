@@ -12,12 +12,13 @@ import java.util.Map;
 public class Player {
 
 
-    static final String VERSION = "Istvan Az asztalnal 0.4.2";
+    static final String VERSION = "Istvan Az asztalnal 0.4.3";
 
     public static JsonMapper jsonMapper = new JsonMapper();
 
 
     public static int betRequest(JsonElement request) {
+        int stack = 0;
         if (request.isJsonArray()) {
             try {
                 System.out.println("ARRAY_START");
@@ -35,7 +36,7 @@ public class Player {
                 System.out.println("OBJECTEND");
                 System.out.println("istvan_object: " + request.getAsJsonObject().get("players").getAsJsonArray());
 
-                int stack = jsonMapper.getPlayerStack(request);
+                stack = jsonMapper.getPlayerStack(request);
                 System.out.println("EZ ITT A STACK: " + stack);
 
                     /*List<OtherPlayer> players = jsonMapper.getPlayersFromJson(request);
@@ -57,7 +58,7 @@ public class Player {
 
         }
 
-        return 965;
+        return stack;
     }
 
     public static void showdown(JsonElement game) {
