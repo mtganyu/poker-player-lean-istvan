@@ -9,7 +9,7 @@ import java.util.Map;
 public class Player {
 
 
-    static final String VERSION = "Istvan Az asztalnal 0.2.6";
+    static final String VERSION = "Istvan Az asztalnal 0.2.7";
 
 
     public static int betRequest(JsonElement request) {
@@ -28,7 +28,7 @@ public class Player {
                     System.out.println("OBJECT_START");
                     System.out.println(request.getAsJsonObject());
                     System.out.println("OBJECTEND");
-                    System.out.println("istvan_object: " + request.getAsJsonObject().get("players").getAsJsonObject().get("Lean Istvan").getAsJsonObject().get("stack"));
+                    System.out.println("istvan_object: " + request.getAsJsonObject().get("players").getAsJsonArray());
                 } catch (Exception e) {
                     System.out.println("OBJECT PRINT FAILED");
                 }
@@ -43,7 +43,7 @@ public class Player {
 
             }
 
-       return  942;
+       return  943;
     }
 
     public static void showdown(JsonElement game) {
