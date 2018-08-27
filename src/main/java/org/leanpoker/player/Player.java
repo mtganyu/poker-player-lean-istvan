@@ -9,7 +9,7 @@ import java.util.Map;
 public class Player {
 
 
-    static final String VERSION = "Istvan Az asztalnal 0.2.2";
+    static final String VERSION = "Istvan Az asztalnal 0.2.3";
 
 
     public static int betRequest(JsonElement request) {
@@ -25,8 +25,6 @@ public class Player {
                     System.out.println("istvan_cash: " + request.getAsJsonObject().get("stack"));
                 } catch (Exception e) {
                     System.out.println("istvan_cash_nulla");
-                } finally {
-                    return 0;
                 }
 
             }else if(request.isJsonPrimitive()){
@@ -39,7 +37,7 @@ public class Player {
 
             }
 
-       return  900;
+       return  910;
     }
 
     public static void showdown(JsonElement game) {
