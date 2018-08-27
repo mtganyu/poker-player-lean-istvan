@@ -4,6 +4,7 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import org.leanpoker.Model.Card;
+import org.leanpoker.Model.GameState;
 import org.leanpoker.Model.OtherPlayer;
 
 import java.util.ArrayList;
@@ -11,8 +12,8 @@ import java.util.List;
 
 public class JsonMapper {
 
-    public List<Card> jsonAsCardObject(JsonElement request) {
-        JsonArray cardsJson = request.getAsJsonObject().get("community_cards").getAsJsonArray();
+    public List<Card> getHoleCards(JsonElement request) {
+        JsonArray cardsJson = request.getAsJsonObject().get("hole_cards").getAsJsonArray();
         List<Card> cards = new ArrayList();
         for (JsonElement cardJson : cardsJson) {
             JsonObject cardObject = cardJson.getAsJsonObject();
@@ -22,7 +23,6 @@ public class JsonMapper {
     }
 
     public List<OtherPlayer> getPlayersFromJson(JsonElement request) {
-
         JsonArray playersJson = request.getAsJsonObject().get("players").getAsJsonArray();
         List<OtherPlayer> otherPlayers = new ArrayList<>();
         for (JsonElement otherPlayerElement : playersJson) {
@@ -34,6 +34,40 @@ public class JsonMapper {
         }
         return otherPlayers;
     }
+
+    public int getPlayerStack(JsonElement request) {
+        JsonObject requestObj = request.getAsJsonObject();
+        JsonArray players = requestObj.getAsJsonArray("players");
+        int result = 0;
+        for(JsonElement playerJson : players) {
+            JsonObject playerObj = playerJson.getAsJsonObject();
+            if(playerObj.get("name").equals("Lean Pista")) {
+                result = playerObj.get("stack").getAsInt();
+            }
+        }
+        return result;
+    }
+
+    // work in progress
+    /*public GameState getGameState(JsonElement request) {
+        List<OtherPlayer> otherPlayers =getPlayersFromJson(request);
+        List<Card> holeCards = getHoleCards(request);
+        List<Card> communityCards = getCommunityCards(request);
+        JsonObject stats request.getAsJsonObject();
+
+        GameState gameState = new GameState();
+    }
+*/
+    private List<Card> getCommunityCards(JsonElement request) {
+        JsonArray cardsJson = request.getAsJsonObject().get("community_cards").getAsJsonArray();
+        List<Card> cards = new ArrayList();
+        for (JsonElement cardJson : cardsJson) {
+            JsonObject cardObject = cardJson.getAsJsonObject();
+            cards.add(new Card(cardObject.get("rank").getAsString(), cardObject.get("suit").getAsString()));
+        }
+        return cards;
+    }
+
 
 
 }
