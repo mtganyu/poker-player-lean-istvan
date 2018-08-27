@@ -22,7 +22,7 @@ public class Player {
                 try {
                     System.out.println(request.getAsJsonObject());
                     System.out.println("OBJECT");
-                    System.out.println("istvan_cash: " + request.getAsJsonObject().get("stack"));
+                    System.out.println("istvan_object: " + request.getAsJsonObject().get("Lean Istvan"));
                 } catch (Exception e) {
                     System.out.println("istvan_cash_nulla");
                 }
@@ -37,7 +37,7 @@ public class Player {
 
             }
 
-       return  922;
+       return  930;
     }
 
     public static void showdown(JsonElement game) {
