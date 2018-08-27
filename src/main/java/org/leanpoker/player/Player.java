@@ -13,7 +13,7 @@ public class Player {
 
 
 
-    static final String VERSION = "Istvan Az asztalnal 0.10.6";
+    static final String VERSION = "Istvan Az asztalnal 0.10.7";
 
 
     public static JsonMapper jsonMapper = new JsonMapper();
@@ -49,7 +49,8 @@ public class Player {
                 secondCard.setRank(cardList.get(1).getRank());
                 secondCard.setSuit(cardList.get(1).getSuit());
                 System.out.println(firstCard.getRank()+", "+secondCard.getRank());
-               if(firstCard.getRank().equals("10")||firstCard.getRank().equals("K")||firstCard.getRank().equals("A")||firstCard.getRank().equals("Q")||firstCard.getRank().equals("J")&& secondCard.getRank().equals("A")||secondCard.getRank().equals("K")||secondCard.getRank().equals("Q")||secondCard.getRank().equals("J")||secondCard.getRank().equals("10")){
+               if(firstCard.getRank().equals("10")&&secondCard.getRank().equals("10")||firstCard.getRank().equals("J")&&secondCard.getRank().equals("J")||firstCard.getRank().equals("Q")&&secondCard.getRank().equals("Q")||firstCard.getRank().equals("K")&&secondCard.getRank().equals("K")||firstCard.getRank().equals("A")&& secondCard.getRank().equals("A")||firstCard.getRank().equals("A")&&secondCard.getRank().equals("K")||firstCard.getRank().equals("A")&&secondCard.getRank().equals("Q")
+                       ||firstCard.getRank().equals("A")&&secondCard.getRank().equals("J")||firstCard.getRank().equals("A")&&secondCard.getRank().equals("10")){
                     return stack;
                 }
                     /*List<OtherPlayer> players = jsonMapper.getPlayersFromJson(request);
