@@ -96,6 +96,19 @@ public class JsonMapper {
         return cards;
     }
 
+    private JsonObject returnPlayer(JsonElement request) {
+        JsonArray players = request.getAsJsonObject().getAsJsonArray("players");
+        JsonObject player = null;
+        int result = 0;
+        for (int i = 0; i < players.size(); i++) {
+            JsonElement element = players.get(i);
+            JsonObject pl = element.getAsJsonObject();
+            if (pl.get("name").getAsString().equals("Lean Istvan")) {
+                player = pl;
+            }
+        }
+        return player;
+    }
 
 
 }
