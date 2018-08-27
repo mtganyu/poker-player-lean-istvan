@@ -36,10 +36,12 @@ public class JsonMapper {
     }
 
     public int getPlayerStack(JsonElement request) {
-        JsonArray players = request.getAsJsonObject().get("players").getAsJsonArray();
+        JsonObject players = request.getAsJsonObject().get("players").getAsJsonObject();
+        JsonArray jsonArray = players.getAsJsonArray();
+        System.out.println(jsonArray.size()+"EZ ITT A JSON ARRAY HOSSZA");
         System.out.println("PLAYER ELKESZULT");
         int result = 0;
-        for(JsonElement playerJson : players) {
+        for(JsonElement playerJson : jsonArray) {
             System.out.println("FOR ALATT");
             JsonObject playerObj = playerJson.getAsJsonObject();
             System.out.println("OBJECT ELKESZULT");
