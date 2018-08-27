@@ -1,13 +1,15 @@
 package org.leanpoker.Model;
 
+import java.util.List;
+
 public class GameState {
     String tournamentId, gameId;
     Integer round, betIndex, smallBlind, bigBlind, currentBuyIn;
     Integer pot, minimumRaise, dealer, orbits, inAction;
-    OtherPlayer[] players;
-    Card[] communityCards;
+    List<OtherPlayer> players;
+    List<Card> communityCards;
 
-    public GameState(String tournamentId, String gameId, Integer round, Integer betIndex, Integer smallBlind, Integer currentBuyIn, Integer pot, Integer minimumRaise, Integer dealer, Integer orbits, Integer inAction, OtherPlayer[] players, Card[] communityCards) {
+    public GameState(String tournamentId, String gameId, Integer round, Integer betIndex, Integer smallBlind, Integer currentBuyIn, Integer pot, Integer minimumRaise, Integer dealer, Integer orbits, Integer inAction, List<OtherPlayer> players, List<Card> communityCards) {
         this.tournamentId = tournamentId;
         this.gameId = gameId;
         this.round = round;
@@ -116,19 +118,19 @@ public class GameState {
         this.inAction = inAction;
     }
 
-    public OtherPlayer[] getPlayers() {
+    public List<OtherPlayer> getPlayers() {
         return players;
     }
 
-    public void setPlayers(OtherPlayer[] players) {
+    public void setPlayers(List<OtherPlayer> players) {
         this.players = players;
     }
 
-    public Card[] getCommunityCards() {
+    public List<Card> getCommunityCards() {
         return communityCards;
     }
 
-    public void setCommunityCards(Card[] communityCards) {
+    public void setCommunityCards(List<Card> communityCards) {
         this.communityCards = communityCards;
     }
 

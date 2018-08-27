@@ -1,10 +1,12 @@
 package org.leanpoker.Model;
 
+import java.util.List;
+
 public class OwnPlayer extends OtherPlayer {
 
-    Card[] holeCards;
+    List<Card> holeCards;
 
-    public OwnPlayer(Integer id, Integer stack, Integer bet, String name, String status, String version, Card[] holeCards) {
+    public OwnPlayer(Integer id, Integer stack, Integer bet, String name, String status, String version, List<Card> holeCards) {
         super(id, stack, bet, name, status, version);
         this.holeCards = holeCards;
     }
