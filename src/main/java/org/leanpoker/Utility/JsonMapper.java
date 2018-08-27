@@ -40,9 +40,13 @@ public class JsonMapper {
         JsonArray players = requestObj.getAsJsonArray("players");
         int result = 0;
         for(JsonElement playerJson : players) {
+            System.out.println("FOR ALATT");
             JsonObject playerObj = playerJson.getAsJsonObject();
+            System.out.println("OBJECT ELKESZULT");
             if(playerObj.get("name").equals("Lean Istvan")) {
+                System.out.println("IF ALATT");
                 result = playerObj.get("stack").getAsInt();
+                System.out.println("RESULT MEGVAN");
             }
         }
         return result;
