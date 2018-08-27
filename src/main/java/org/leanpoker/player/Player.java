@@ -15,10 +15,18 @@ public class Player {
 
                 System.out.println(request.getAsJsonArray());
                 System.out.println("ARRAY");
-            }else if(request.isJsonObject()){
 
-                System.out.println(request.getAsJsonObject());
-                System.out.println("OBJECT");
+            }else if(request.isJsonObject()){
+                try {
+                    System.out.println(request.getAsJsonObject());
+                    System.out.println("OBJECT");
+                    System.out.println("istvan_cash: " + request.getAsJsonObject().get("stack"));
+                } catch (Exception e) {
+                    System.out.println("istvan_cash_nulla");
+                } finally {
+                    return 0;
+                }
+
             }else if(request.isJsonPrimitive()){
 
                 System.out.println(request.getAsJsonPrimitive());
