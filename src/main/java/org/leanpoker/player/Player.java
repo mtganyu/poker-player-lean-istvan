@@ -22,7 +22,7 @@ public class Player {
             }else if(request.isJsonPrimitive()){
 
                 System.out.println(request.getAsJsonPrimitive());
-                System.out.println("PRIMITVIE");
+                System.out.println("PRIMITIVE");
 
             }else{
                 request.getAsJsonNull();
