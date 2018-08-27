@@ -37,6 +37,7 @@ public class JsonMapper {
 
     public int getPlayerStack(JsonElement request) {
         JsonArray players = request.getAsJsonObject().getAsJsonArray("players");
+        System.out.println("PLAYERS SIZE: " + players.size());
         JsonObject player = null;
         for (int i = 0; i < players.size(); i++) {
             JsonElement element = players.get(i);
