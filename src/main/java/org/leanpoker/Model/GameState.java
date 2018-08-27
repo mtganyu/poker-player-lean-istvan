@@ -4,10 +4,10 @@ public class GameState {
     String tournamentId, gameId;
     Integer round, betIndex, smallBlind, bigBlind, currentBuyIn;
     Integer pot, minimumRaise, dealer, orbits, inAction;
-    OtherPlayer[] palyers;
+    OtherPlayer[] players;
     Card[] communityCards;
 
-    public GameState(String tournamentId, String gameId, Integer round, Integer betIndex, Integer smallBlind, Integer currentBuyIn, Integer pot, Integer minimumRaise, Integer dealer, Integer orbits, Integer inAction, OtherPlayer[] palyers, Card[] communityCards) {
+    public GameState(String tournamentId, String gameId, Integer round, Integer betIndex, Integer smallBlind, Integer currentBuyIn, Integer pot, Integer minimumRaise, Integer dealer, Integer orbits, Integer inAction, OtherPlayer[] players, Card[] communityCards) {
         this.tournamentId = tournamentId;
         this.gameId = gameId;
         this.round = round;
@@ -19,7 +19,7 @@ public class GameState {
         this.dealer = dealer;
         this.orbits = orbits;
         this.inAction = inAction;
-        this.palyers = palyers;
+        this.players = players;
         this.communityCards = communityCards;
         this.bigBlind = smallBlind * 2;
     }
@@ -115,12 +115,12 @@ public class GameState {
         this.inAction = inAction;
     }
 
-    public OtherPlayer[] getPalyers() {
-        return palyers;
+    public OtherPlayer[] getPlayers() {
+        return players;
     }
 
-    public void setPalyers(OtherPlayer[] palyers) {
-        this.palyers = palyers;
+    public void setPlayers(OtherPlayer[] players) {
+        this.players = players;
     }
 
     public Card[] getCommunityCards() {
