@@ -15,7 +15,7 @@ import java.util.Map;
 public class Player {
 
 
-    static final String VERSION = "Istvan Az asztalnal 0.3.1";
+    static final String VERSION = "Istvan Az asztalnal 0.3.2";
 
     public static JsonMapper jsonMapper;
 
@@ -37,15 +37,19 @@ public class Player {
                     System.out.println(request.getAsJsonObject());
                     System.out.println("OBJECTEND");
                     System.out.println("istvan_object: " + request.getAsJsonObject().get("players").getAsJsonArray());
+
                     JsonArray playersElement = request.getAsJsonObject().get("players").getAsJsonArray();
+
                     int stack = jsonMapper.getPlayerStack(request);
                     System.out.println("EZ ITT A STACK: " +stack);
+
                     /*List<OtherPlayer> players = jsonMapper.getPlayersFromJson(request);
                     System.out.println("Player's List size: "+ players.size());
                     List<Card> hand_cards = jsonMapper.jsonAsCardObject(request);
                     System.out.println("hand size: " + hand_cards.size());*/
                 } catch (Exception e) {
-                    System.out.println("OBJECT PRINT FAILED " +"This is the Exception: "+e.getMessage());
+                    System.out.println("OBJECT PRINT FAILED " +"This is the Exception: "+ e.getMessage());
+                    e.printStackTrace();
                 }
 
             }else if(request.isJsonPrimitive()){
@@ -58,7 +62,7 @@ public class Player {
 
             }
 
-       return  952;
+       return 952;
     }
 
     public static void showdown(JsonElement game) {
