@@ -41,7 +41,7 @@ public class Player {
                 stack = jsonMapper.getPlayerStack(request);
                 System.out.println("EZ ITT A STACK: " + stack);
                 List<Card>cardList = jsonMapper.getHoleCards(request);
-                System.out.println(cardList);
+                System.out.println(cardList.size());
 
                     /*List<OtherPlayer> players = jsonMapper.getPlayersFromJson(request);
                     System.out.println("Player's List size: "+ players.size());
