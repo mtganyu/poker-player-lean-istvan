@@ -1,15 +1,17 @@
 package org.leanpoker.player;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 
+import java.lang.reflect.Array;
 import java.util.Map;
 
 public class Player {
 
 
-    static final String VERSION = "Istvan Az asztalnal 0.2.7";
+    static final String VERSION = "Istvan Az asztalnal 0.2.8";
 
 
     public static int betRequest(JsonElement request) {
@@ -29,6 +31,10 @@ public class Player {
                     System.out.println(request.getAsJsonObject());
                     System.out.println("OBJECTEND");
                     System.out.println("istvan_object: " + request.getAsJsonObject().get("players").getAsJsonArray());
+                    JsonArray players = request.getAsJsonObject().get("players").getAsJsonArray();
+                    for(JsonElement element : players) {
+                        System.out.println("ELEMENT: " + element);
+                    }
                 } catch (Exception e) {
                     System.out.println("OBJECT PRINT FAILED");
                 }
@@ -43,7 +49,7 @@ public class Player {
 
             }
 
-       return  943;
+       return  950;
     }
 
     public static void showdown(JsonElement game) {
