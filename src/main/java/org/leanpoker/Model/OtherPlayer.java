@@ -13,6 +13,9 @@ public class OtherPlayer {
         this.version = version;
     }
 
+    public OtherPlayer() {
+    }
+
     public Integer getId() {
         return id;
     }

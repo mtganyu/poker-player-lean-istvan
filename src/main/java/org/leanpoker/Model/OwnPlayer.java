@@ -8,4 +8,7 @@ public class OwnPlayer extends OtherPlayer {
         super(id, stack, bet, name, status, version);
         this.holeCards = holeCards;
     }
+
+    public OwnPlayer() {
+    }
 }
