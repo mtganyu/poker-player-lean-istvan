@@ -12,9 +12,9 @@ import java.util.Map;
 public class Player {
 
 
-    static final String VERSION = "Istvan Az asztalnal 0.3.9b(UNSTOPABBLE)";
+    static final String VERSION = "Istvan Az asztalnal 0.4.0";
 
-    public static JsonMapper jsonMapper;
+    public static JsonMapper jsonMapper = new JsonMapper();
 
 
     public static int betRequest(JsonElement request) {
@@ -57,7 +57,7 @@ public class Player {
 
         }
 
-        return 961;
+        return 962;
     }
 
     public static void showdown(JsonElement game) {
