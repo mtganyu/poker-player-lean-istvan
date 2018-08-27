@@ -13,6 +13,7 @@ import java.util.List;
 public class JsonMapper {
 
     public List<Card> getHoleCards(JsonElement request) {
+        JsonArray players = request.getAsJsonObject().getAsJsonArray("players");
         JsonArray cardsJson = request.getAsJsonObject().get("hole_cards").getAsJsonArray();
         List<Card> cards = new ArrayList();
         for (JsonElement cardJson : cardsJson) {
@@ -20,6 +21,7 @@ public class JsonMapper {
             cards.add(new Card(cardObject.get("rank").getAsString(), cardObject.get("suit").getAsString()));
         }
         return cards;
+
     }
 
     public List<OtherPlayer> getPlayersFromJson(JsonElement request) {
