@@ -65,6 +65,7 @@ public class GameState {
 
     public void setSmallBlind(Integer smallBlind) {
         this.smallBlind = smallBlind;
+        this.bigBlind = smallBlind * 2;
     }
 
     public Integer getCurrentBuyIn() {
