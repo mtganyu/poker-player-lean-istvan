@@ -1,6 +1,7 @@
 package org.leanpoker.player;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import org.leanpoker.Model.Card;
@@ -8,12 +9,13 @@ import org.leanpoker.Model.OtherPlayer;
 import org.leanpoker.Utility.JsonMapper;
 
 import java.util.List;
+import java.lang.reflect.Array;
 import java.util.Map;
 
 public class Player {
 
 
-    static final String VERSION = "Istvan Az asztalnal 0.2.7";
+    static final String VERSION = "Istvan Az asztalnal 0.2.8";
 
     public static JsonMapper jsonMapper;
 
@@ -53,7 +55,7 @@ public class Player {
 
             }
 
-       return  943;
+       return  950;
     }
 
     public static void showdown(JsonElement game) {
