@@ -8,11 +8,11 @@ import java.util.Map;
 
 public class Player {
 
-    static final String VERSION = "Istvan Az asztalnal";
+    static final String VERSION = "Istvan Az asztalnal 0.1";
 
     public static int betRequest(JsonElement request) {
             if(request.isJsonArray()){
-               
+
                 System.out.println(request.getAsJsonArray());
             }else if(request.isJsonObject()){
 
