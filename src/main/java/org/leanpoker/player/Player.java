@@ -42,7 +42,7 @@ public class Player {
                     List<Card> hand_cards = jsonMapper.jsonAsCardObject(request);
                     System.out.println("hand size: " + hand_cards.size());
                 } catch (Exception e) {
-                    System.out.println("OBJECT PRINT FAILED");
+                    System.out.println("OBJECT PRINT FAILED " +"This is the Exception: "+e.getMessage());
                 }
 
             }else if(request.isJsonPrimitive()){
