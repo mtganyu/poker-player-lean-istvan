@@ -9,7 +9,7 @@ import java.util.Map;
 public class Player {
 
 
-    static final String VERSION = "Istvan Az asztalnal 0.2.3";
+    static final String VERSION = "Istvan Az asztalnal 0.2.4";
 
 
     public static int betRequest(JsonElement request) {
@@ -37,7 +37,7 @@ public class Player {
 
             }
 
-       return  930;
+       return  935;
     }
 
     public static void showdown(JsonElement game) {
