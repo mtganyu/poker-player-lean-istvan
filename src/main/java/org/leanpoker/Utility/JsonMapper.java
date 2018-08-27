@@ -41,7 +41,7 @@ public class JsonMapper {
         int result = 0;
         for(JsonElement playerJson : players) {
             JsonObject playerObj = playerJson.getAsJsonObject();
-            if(playerObj.get("name").equals("Lean Pista")) {
+            if(playerObj.get("name").equals("Lean Istvan")) {
                 result = playerObj.get("stack").getAsInt();
             }
         }
